@@ -12,18 +12,18 @@ const ses = new aws.SES({apiVersion: '2010-12-01',region: 'us-east-1'});
 const s3 = new aws.S3();
 
 
-const keys=['006.jpg','pptexamples.ppt'];
-    const process=async() =>{
+// const keys=['006.jpg','pptexamples.ppt'];
+//     const process=async() =>{
 
-        const sourceBucket = 'compression-testing';
-        const sourcePath = 'testing';
-        const sourceFiles = keys;
-        const outputFilename = 'outputFile';
-        const outputFormat =  'zip';
+//         const sourceBucket = 'compression-testing';
+//         const sourcePath = 'testing';
+//         const sourceFiles = keys;
+//         const outputFilename = 'outputFile';
+//         const outputFormat =  'zip';
 
-        const result = await s3Archiver.archive(sourceBucket, sourcePath, sourceFiles, outputFilename, outputFormat);
-        console.log(result);
-    }
+//         const result = await s3Archiver.archive(sourceBucket, sourcePath, sourceFiles, outputFilename, outputFormat);
+//         console.log(result);
+//     }
 
     // process();
 
