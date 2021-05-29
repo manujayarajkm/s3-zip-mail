@@ -1,0 +1,20 @@
+{
+  "name": "tst",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "aws-sdk": "^2.918.0",
+    "express": "^4.17.1",
+    "lambda-s3-archiver": "^0.0.2",
+    "nodemailer": "^6.6.1",
+    "s3-zip": "^3.2.0"
+  }
+}
