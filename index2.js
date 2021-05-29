@@ -1,6 +1,6 @@
 "use strict";
 
-const s3Archiver = require('lambda-s3-archiver');
+// const s3Archiver = require('lambda-s3-archiver');
 const aws = require('aws-sdk');
 const config=new aws.Config({
     accessKeyId: 'AKIAQAFABRDVDHCAGCFU', secretAccessKey: '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', region: 'us-east-1'
