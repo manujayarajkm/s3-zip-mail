@@ -28,12 +28,28 @@ const s3 = new aws.S3();
     // process();
 
 const Buckt='compression-testing'
-const key='testing/outputFile.zip';
+const key='testing/archive.zip';
 
     const getS3File=(bucket, keys)=> {
         console.log('params ',bucket,keys);
         return new Promise( (resolve, reject)=> {
             s3.getObject(
+                {
+                    Bucket: bucket,
+                    Key: keys
+                },
+                 (err, data) =>{
+                    if (err) return reject(err);
+                    else return resolve(data);
+                }
+            );
+        })
+    }
+
+    const deleteS3File=(bucket, keys)=> {
+        console.log('params ',bucket,keys);
+        return new Promise( (resolve, reject)=> {
+            s3.deleteObject(
                 {
                     Bucket: bucket,
                     Key: keys
@@ -77,6 +93,14 @@ const key='testing/outputFile.zip';
                     return(err);
                 } else {
                     console.log('Email sent successfully');
+                    deleteS3File(Buckt, key).then(data=>{
+                        console.log('Successfully removed zipFile');
+                    })
+                    .catch( (error) =>{
+                        console.log(error);
+                        console.log('Error deleting zipfile from S3');
+                        return(err);
+                    });
                     return;
                 }
             });
