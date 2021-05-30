@@ -6,7 +6,7 @@ const archiver = require('archiver');
 const { PassThrough } = require('stream');
 
 const config=new aws.Config({
-    accessKeyId: 'AKIAQAFABRDVDHCAGCFU', secretAccessKey: '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', region: 'us-east-1'
+    accessKeyId: 'SECRET_KEY', secretAccessKey: 'SECRET_ACCESS_KEY', region: 'us-east-1'
   });
 
 const s3 = new aws.S3();
